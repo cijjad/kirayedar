@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --ink: #0f1d2e;
+  --ink-soft: #4a5a6e;
+  --line: #dde3ea;
+  --brand: #0b3d5c;       /* deep navy: trust */
+  --brand-ink: #ffffff;
+  --accent: #0e8a5f;      /* emerald: growth */
+  --accent-soft: #e6f4ee;
+  --warn: #b45309;
+  --warn-soft: #fef3c7;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --focus: #2563eb;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: var(--font-latin), system-ui, sans-serif;
+  --font-urdu: var(--font-nastaliq), "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-latin), system-ui, sans-serif;
+}
+/* Urdu: Nastaliq needs generous line height to avoid clipped ascenders. */
+[lang="ur"] body { font-family: var(--font-nastaliq), var(--font-latin), serif; line-height: 2.1; }
+[lang="ur"] input, [lang="ur"] textarea, [lang="ur"] select, [lang="ur"] button { font-family: inherit; line-height: 1.9; }
+/* Numbers, IDs, emails and URLs stay left-to-right inside Urdu text. */
+.ltr { direction: ltr; unicode-bidi: isolate; }
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
